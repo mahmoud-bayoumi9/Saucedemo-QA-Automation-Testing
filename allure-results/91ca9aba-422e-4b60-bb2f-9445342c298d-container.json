@@ -1,0 +1,1 @@
+{"uuid":"91ca9aba-422e-4b60-bb2f-9445342c298d","name":"saucedemo.login.tearDown","children":["d587fc2e-af85-486f-be06-7b7569b09bda"],"description":"","befores":[],"afters":[{"name":"tearDown","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1781110129312,"stop":1781110131467}],"start":1781110129312,"stop":1781110131467}

@@ -1,0 +1,26 @@
+package saucedemo.utiles.report;
+import com.github.automatedowl.tools.AllureEnvironmentWriter;
+import com.google.common.collect.ImmutableMap;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import saucedemo.utiles.logs.LogsManager;
+import static saucedemo.utiles.datareader.propertyReader.getProperty;
+public class AllureEnvironmentManager {
+    public static  void setAllureEnvironment() {
+        AllureEnvironmentWriter.allureEnvironmentWriter(
+                ImmutableMap.<String, String>builder()
+                        .put("OS",getProperty("os.name"))
+                        .put("Browser", "chrome")
+                        .put("Browser.Version", "70.0.3538.77")
+                        .put("URL", "http://testjs.site88.net")
+                        .build(), getProperty("webBaseUrl")
+                        + "/allure-results/");
+        LogsManager.info("Allure management environment set.");
+        saucedemo.utiles.report.AllureBinaryManager.downloadAndExtract();
+
+    }
+    @Test
+    void someTest() {
+        Assert.assertTrue(true);
+    }
+}

@@ -1,0 +1,1 @@
+{"uuid":"655983aa-32b8-41fb-ad1f-d4cabfd8baf2","name":"saucedemo.products.setup","children":["831db1a1-6a3f-4ce8-825b-e5583b1cc094"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1781130182162,"stop":1781130214112}],"afters":[],"start":1781130182162,"stop":1781130214114}
