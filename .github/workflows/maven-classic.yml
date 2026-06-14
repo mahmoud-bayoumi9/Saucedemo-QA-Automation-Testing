@@ -23,3 +23,28 @@ jobs:
 
     - name: Run Tests with Maven
       run: mvn clean test
+      continue-on-error: true # عشان لو التستات فشلت، الـ Workflow يكمل ويعمل التقرير برضو
+
+    - name: Get Allure history
+      finalized: false
+      if: always()
+      uses: actions/checkout@v4
+      with:
+        ref: gh-pages
+        path: gh-pages
+        continue-on-error: true
+
+    - name: Allure Report Action
+      uses: simple-elf/allure-report-action@v1.11
+      if: always()
+      id: allure-report
+      with:
+        allure_results: allure-results
+        allure_history: allure-history
+
+    - name: Upload Allure Report as Artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: allure-report
+        path: allure-report
