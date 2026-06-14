@@ -17,6 +17,9 @@ public class GuiDriver {
     public GuiDriver() {
         WebDriver rawDriver;
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); // تشغيل بدون واجهة
+        options.addArguments("--disable-gpu"); // إيقاف الجرافيكس لتسريع الأداء
+        options.addArguments("--window-size=1920,1080");
         options.addArguments("--disable-features=PasswordLeakDetection");
         options.addArguments("--no-first-run");
         options.addArguments("--no-default-browser-check");

@@ -1,0 +1,1 @@
+{"uuid":"61ae88cf-7437-4369-8396-d9ed4726cd9d","name":"saucedemo.loginTest.setup","children":["a85c5be8-97d9-4793-9ed9-9b3c8b316d19"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1781267949160,"stop":1781267963061}],"afters":[],"start":1781267949160,"stop":1781267963061}
