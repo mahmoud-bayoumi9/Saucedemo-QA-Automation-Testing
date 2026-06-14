@@ -11,6 +11,13 @@ import saucedemo.utiles.report.AllureAttachment;
 import java.io.File;
 
 public class screenShotManager {
+    @Attachment(value = "{screenshotName}", type = "image/png")
+    public static byte[] attachScreenshotToAllure(WebDriver driver, String screenshotName) {
+        if (driver != null) {
+            return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        }
+        return new byte[0];
+    }
     public   static final String screenPath="test-outPut/screenShots/";
     public static void takeFullScreen(WebDriver driver,String screenName){
         try{
