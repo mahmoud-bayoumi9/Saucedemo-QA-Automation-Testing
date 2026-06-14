@@ -204,6 +204,20 @@ import java.io.File;
                     case ITestResult.FAILURE -> screenShotManager.takeFullScreen(driver, "fail_" + testResult.getName());
                 }
             }
+            switch (testResult.getStatus()) {
+    case ITestResult.SKIP -> {
+        screenShotManager.takeFullScreen(driver, "skip_" + testResult.getName());
+        screenShotManager.attachScreenshotToAllure(driver, "skip_" + testResult.getName()); // 👈 أوتوميشن لـ Allure
+    }
+    case ITestResult.SUCCESS -> {
+        screenShotManager.takeFullScreen(driver, "success_" + testResult.getName());
+        screenShotManager.attachScreenshotToAllure(driver, "success_" + testResult.getName());
+    }
+    case ITestResult.FAILURE -> {
+        screenShotManager.takeFullScreen(driver, "fail_" + testResult.getName());
+        screenShotManager.attachScreenshotToAllure(driver, "fail_" + testResult.getName());
+    }
+}
         }
 
         public void cleanTestOutPutDirectory() {
