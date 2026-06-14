@@ -22,6 +22,11 @@ public class GuiDriver {
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--disable-features=PasswordLeakDetection");
         options.addArguments("--no-first-run");
+        options.addArguments("--headless=new"); // تشغيل بدون شاشة
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--window-size=1920,1080");
         options.addArguments("--no-default-browser-check");
         options.addArguments("--disable-notifications");
         Map<String, Object> prefs = new HashMap<>();
